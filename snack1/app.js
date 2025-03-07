@@ -9,12 +9,18 @@ const bikes = [
     {nome : "z", peso: 45}
 ]
 
-let minWeight = 1000;
+let minWeight = 0;
 let lightWeightBike = 0;
 
 for (let i = 0; i < bikes.length; i++){
     const bike = bikes[i];
     const bikeWeight = bike.peso;
+
+    if (i === 0){
+        minWeight = bikeWeight;
+        lightWeightBike = i;
+    }
+
     if (bikeWeight < minWeight){
         minWeight = bikeWeight;
         lightWeightBike = i;
