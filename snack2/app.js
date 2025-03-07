@@ -5,7 +5,7 @@
 //Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 
 
-const campionato = [
+const championship = [
     {name : "Napoli", score : 0, fouls: 0},
     {name : "Roma", score : 0, fouls: 0},
     {name : "Milan", score : 0, fouls: 0},
@@ -13,7 +13,19 @@ const campionato = [
     {name : "Juventus", score : 0, fouls: 0}
 ]
 
+const championshipFouls = []
 
 const randomNumber = (min, max) => {
     return parseInt(Math.random() * (max - min) + min);
 }
+
+for (let i = 0; i < championship.length; i++){
+    team = championship[i];
+    team.score = randomNumber(3, 100);
+    team.fouls = randomNumber(1, 40);
+    championshipFouls.push({nome: team.name, fouls: team.fouls})
+    console.log(`${team.name} ha fatto ${team.score} punti ed ha subito ${team.fouls} falli`)
+}
+
+
+console.log(championshipFouls)
